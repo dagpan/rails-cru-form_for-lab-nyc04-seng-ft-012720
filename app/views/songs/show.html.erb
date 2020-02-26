@@ -1,0 +1,16 @@
+<h1>This is the Songs Show</h1>
+
+<h2><%= "This is The #{@song.name} Page" %></h2>
+  <ul>
+     <li>
+     <h3>Song's Name: <%= @song.name %></h3>
+     </li>
+     <li>
+     <h3>Artist <%= link_to @song.artist.name, @song.artist %></h3>
+     </li>
+     <li>
+     <h3>Genre <%= link_to @song.genre.name, @song.genre %></h3>
+     </li>
+  </ul>
+
+<h5><%= link_to "Edit This Song", edit_song_path %></h5>

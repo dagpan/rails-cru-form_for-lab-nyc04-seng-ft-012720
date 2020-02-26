@@ -1,0 +1,26 @@
+<h1>This is the Artists Edit</h1>
+<h2><%= "#{@artist.name} Edit Form"%></h2>
+
+<%= form_for @artist do |f| %>
+  <ul>
+     <li>
+     <%= f.label :name %>
+     <%= f.text_field :name %>
+     </li>
+     <li>
+     <%= f.label :bio %>
+     <%= f.text_area :bio %>
+     </li>
+     <li>
+     <%= f.submit %>
+  </ul>
+<% end %>
+
+<% if @artist.errors.any? %>
+<h3><%= "#{@artist.errors.count} error/s" %> prohibited this Artist from being saved:</h3>
+    <ul>
+    <% @artist.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>

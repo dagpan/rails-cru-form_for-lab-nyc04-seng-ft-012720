@@ -1,0 +1,30 @@
+<h1>This is the Songs Edit</h1>
+<h2><%= "#{@song.name} Edit Form"%></h2>
+
+<%= form_for @song do |f| %>
+  <ul>
+     <li>
+     <%= f.label :name %>
+     <%= f.text_field :name %>
+     </li>
+     <li>
+     <%= f.label "Artist" %>
+     <%= f.select(:artist_id, options_for_select(@artists_array)) %>
+     </li>
+     <li>
+     <%= f.label "Genre" %>
+     <%= f.select(:genre_id, options_for_select(@genres_array)) %>
+     </li>
+     <li>
+     <%= f.submit %>
+  </ul>
+<% end %>
+
+<% if @song.errors.any? %>
+  <h3><%= "#{@song.errors.count} error/s" %> prohibited this Song from being saved:</h3>
+    <ul>
+    <% @song.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>

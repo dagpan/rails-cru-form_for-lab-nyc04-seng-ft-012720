@@ -1,0 +1,20 @@
+<h1>This is the Artists Show</h1>
+
+<h2><%= "This is The #{@artist.name} Page" %></h2>
+  <ul>
+     <li>
+     <h3>Artist's Name: <%= @artist.name %></h3>
+     </li>
+     <li>
+     <h4>Artist's Bio: <%= @artist.bio %></h3>
+     </li>
+  </ul>
+<h3><%= "#{@artist.name}'s Songs" %></h3>
+<% @artist_songs.each do |song| %>
+<ul>
+   <li>
+     <h3><%= link_to song.name, song %></h3>
+   </li>
+</ul>
+<% end %>
+<h5><%= link_to "Edit This Artist", edit_artist_path %></h5>
