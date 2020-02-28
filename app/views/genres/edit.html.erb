@@ -1,17 +1,14 @@
-<h1>This is the Genres Edit</h1>
 <h2><%= "#{@genre.name} Edit Form"%></h2>
-
 <%= form_for @genre do |f| %>
   <ul>
      <li>
      <%= f.label :name %>
      <%= f.text_field :name %>
      </li>
-     <li>
-     <%= f.submit %>
-  </ul>
+    <p align="left"><%= f.submit %></p>
+  </ul><br>
 <% end %>
-
+<hr>
 <% if @genre.errors.any? %>
 <h3><%= "#{@genre.errors.count} error/s" %> prohibited this Genre from being saved:</h3>
     <ul>

@@ -1,6 +1,4 @@
-<h1>This is the Artists New</h1>
 <h2>Artist New Form</h2>
-
 <%= form_for @artist do |f| %>
   <ul>
      <li>
@@ -11,11 +9,10 @@
      <%= f.label :bio %>
      <%= f.text_area :bio %>
      </li>
-     <li>
-     <%= f.submit %>
-  </ul>
+    <p align="left"><%= f.submit %></p>
+  </ul><br>
 <% end %>
-
+<hr>
 <% if @artist.errors.any? %>
 <h3><%= "#{@artist.errors.count} error/s" %> prohibited this Artist from being saved:</h3>
   <ul>

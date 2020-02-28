@@ -1,18 +1,17 @@
-<h1>This is the Genres Show</h1>
-
 <h2><%= "This is The #{@genre.name} Page" %></h2>
 <ul>
-     <li>
-     <h3>Genre Name: <%= @genre.name %></h3>
-     </li>
+   <li>
+   <h3>Genre Name: <%= @genre.name %></h3>
+   </li>
 </ul>
 <h3><%= "Songs of #{@genre.name} genre" %></h3>
 <ul>
 <% @genre_songs.each do |song| %>
-     <li>
-     <h3><%= link_to song.name, song %></h3>
-     </li>
+   <li>
+   <h3><%= link_to song.name, song %></h3>
+   </li>
 </ul>
 <% end %>
-
-<h5><%= link_to "Edit This Genre", edit_genre_path %></h5>
+<hr>
+<h4><%= link_to "Edit This Genre", edit_genre_path %></h4>
+<h4><%= button_to "Delete This Genre", @genre, method: :delete %></h4>

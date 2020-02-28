@@ -1,12 +1,10 @@
-<h1>This is the Artists Index</h1>
-
 <h2>These Are All The Artists</h2>
-
+<br>
 <% @artists.each do |artist| %>
   <ul>
      <li>
-     <h3>Artist Name<%= link_to artist.name, artist %></h3>
+     <h3>Artist Name: <%= link_to artist.name, artist %></h3>
      </li>
   </ul>
 <% end %>
-<h5><%= link_to "Create A New Artist", new_artist_path %></h5>
+<h4><%= link_to "Create A New Artist", new_artist_path %></h4><br>
